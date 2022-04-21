@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="https://access.com/control"
+ xmlns:tns="https://access.com/control"
+ elementFormDefault="qualified">
+ 
+ <xs:element name="GrantAccessRequest">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="habitacion" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name="GrantAccessResponse">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="id" type="xs:int"/>
+    <xs:element name="token" type="xs:string"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name="ValidateTokenRequest">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="token" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name="ValidateTokenResponse">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="isTokenValid" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+</xs:schema>
